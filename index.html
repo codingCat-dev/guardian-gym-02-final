@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" type="image/png" href="img/favicon.ico" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <title>Guardian Gym</title>
+  </head>
+  <body>
+    <!-- Navigation -->
+
+    <nav class="navigation" id="navigation">
+      <a href="#header"
+        ><img
+          src="img/logo.png"
+          alt="gym-website-logo bicep-curl"
+          class="navigation-logo"
+      /></a>
+    </nav>
+    <!-- Header -->
+
+    <section class="header section" id="header">
+      <div>
+        <img
+          src="img/titleImage.png"
+          alt="website-title-image man-posing"
+          class="header-image"
+        />
+      </div>
+      <div class="header-title">
+        <h1 class="title-main">Guardian Gym</h1>
+        <h1 class="title-sub">
+          You are nothing else but what you make of yourself.
+        </h1>
+      </div>
+    </section>
+    <!-- Counter -->
+    <div class="counter margin-large">
+      <div>
+        <div class="counter-content" data-target="10700"></div>
+        <span>Happy Customers</span>
+      </div>
+      <div>
+        <div class="counter-content" data-target="93000"></div>
+        <span>Protein Shakes served</span>
+      </div>
+      <div>
+        <div class="counter-content" data-target="4000"></div>
+        <span>Goals Acomplished</span>
+      </div>
+    </div>
+    <!-- About Section -->
+
+    <section class="section margin-large about">
+      <h3>
+        The journey to a healthier body <br />
+        starts right now
+      </h3>
+
+      <div class="about-container margin-large">
+        <div class="about-image">
+          <img
+            class="about-img"
+            src="img/services.png"
+            alt="indoor-workout-image-stretch"
+          />
+        </div>
+        <div class="about-text">
+          <h4>Learn to live a healthy life</h4>
+
+          <p class="about-text__paragraph paragraph margin-small">
+            Changing your lifestyle with a fast paced life may seem hard or
+            impossible, but with small steps each week you can achieve your
+            dream physique and live a healthier life.
+          </p>
+        </div>
+      </div>
+      <div class="about-container margin-large">
+        <div class="about-text">
+          <h4>Learn how to exercise properly</h4>
+
+          <p class="about-text__paragraph paragraph margin-small">
+            Just going to the gym and lifting weights won't make you healthy,
+            after all it may even cause some harm to your body. We teach proper
+            exercise techniques.
+          </p>
+        </div>
+        <div class="about-image">
+          <img
+            class="about-img"
+            src="img/gymtrainer1.jpg"
+            alt="chest-press-gym-workout"
+          />
+        </div>
+      </div>
+      <div class="about-container margin-large">
+        <div class="about-image">
+          <img class="about-img" src="img/gymjoga.jpg" alt="gym-joga-image" />
+        </div>
+        <div class="about-text">
+          <h4>Specific plan just for you</h4>
+
+          <p class="about-text__paragraph paragraph margin-small">
+            Everyone is different, and we know it. That's why all of our clients
+            get a specific program just for their lifestyle and body type. This
+            give the best possible results.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Form -->
+
+    <section class="section form margin-large">
+      <div>
+        <h3>Get our free Meal plan</h3>
+        <p class="paragraph margin-small">
+          Signup to our newsletter to get a free 30 day meal plan. <br />
+          You will receive all guidance on what to eat, how to cook and how much
+          to eat.
+        </p>
+      </div>
+      <div class="form-box margin-medium">
+        <form class="form-holder">
+          <div class="form-box__holder">
+            <input
+              placeholder="Full Name"
+              type="text"
+              id="name"
+              class="form-box__input"
+              required
+              min="5"
+              max="20"
+            />
+          </div>
+          <div class="form-box__holder">
+            <input
+              placeholder="Email"
+              type="text"
+              id="email"
+              class="form-box__input"
+              required
+              min="5"
+              max="25"
+            />
+          </div>
+          <div class="form-box__button">
+            <button type="submit" class="btn">Sign up</button>
+          </div>
+        </form>
+        <div class="form-modal hidden">
+          <p class="form-modal__text">Thanks for Joining</p>
+        </div>
+      </div>
+    </section>
+    <!-- Reviews -->
+    <section class="reviews section margin-medium">
+      <h3>Our Loyal members</h3>
+
+      <div class="reviews-list margin-small"></div>
+    </section>
+    <!-- Contact & Map -->
+    <section class="section contact margin-large">
+      <h3>Contact</h3>
+      <div class="contact-container margin-medium">
+        <div id="map"></div>
+        <div class="contact-content">
+          <ul>
+            <li class="contact-title">Opening Hours</li>
+            <li>Monday-Friday <span>07-21</span></li>
+            <li>Saturday-Sunday <span>10-18</span></li>
+
+            <li>Bicep Curl Street 22000</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer class="footer margin-small">
+      <ul class="footer-item margin-small">
+        <li>
+          <a href="#" target="_blank" class="footer-link link"
+            ><i class="fab fa-facebook-square fa-3x"></i
+          ></a>
+        </li>
+
+        <li>
+          <a
+            href="https://github.com/codingCat-dev"
+            target="_blank"
+            class="footer-link link"
+            ><i class="fab fa-github-square fa-3x"></i
+          ></a>
+        </li>
+        <li>
+          <a
+            href="https://discord.gg/jV8DtW6Xzx"
+            target="_blank"
+            class="footer-link link"
+            ><i class="fab fa-discord fa-3x"></i
+          ></a>
+        </li>
+      </ul>
+      <div class="footer-copyright">
+        <span class="footer-copyright">&#169; coding-cat 2021</span>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
