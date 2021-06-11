@@ -49,7 +49,7 @@ const reviewsList = document.querySelector('.reviews-list');
 const reviewsButton = document.querySelector('.reviews-button');
 
 const getData = async () => {
-  const res = await fetch('https://randomuser.me/api?results=14');
+  const res = await fetch('https://randomuser.me/api?results=10');
   const { results } = await res.json();
 
   results.forEach(user => {
