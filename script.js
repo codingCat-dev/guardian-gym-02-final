@@ -1,17 +1,15 @@
 'use strict';
 
-const loadingScreen = document.querySelector('.loading-screen');
-const navigationLogo = document.querySelector('.navigation-logo');
-
+// Counter functionality
 const dataCounters = document.querySelectorAll('.counter-content');
 
 dataCounters.forEach(counter => {
   counter.innerText = '0';
-  // counter function
+
   const counterUpdate = () => {
     const dataTarget = +counter.getAttribute('data-target');
     const data = +counter.innerText;
-    // counter function
+
     const counterIncrement = dataTarget / 750;
 
     if (data < dataTarget) {
@@ -21,9 +19,9 @@ dataCounters.forEach(counter => {
       counter.innerText = dataTarget;
     }
   };
-  // counter function
+
   counterUpdate();
-}); // counter function
+});
 
 // Form
 const formHolder = document.querySelector('.form-holder');
@@ -44,16 +42,21 @@ formHolder.addEventListener('submit', e => {
     }, 900);
   }
 });
-
+// REVIEWS
 const reviewsList = document.querySelector('.reviews-list');
 const reviewsButton = document.querySelector('.reviews-button');
 
 const getData = async () => {
-  const res = await fetch('https://randomuser.me/api?results=10');
+  let resultsNumber = 6;
+
+  const res = await fetch(`https://randomuser.me/api?results=${resultsNumber}`);
+
   const { results } = await res.json();
 
   results.forEach(user => {
     const div = document.createElement('div');
+
+    div.classList.add('reviewsHolder');
 
     div.innerHTML = `
     <img class="reviews-image" src="${user.picture.large}" alt="${user.name.first}">
@@ -67,7 +70,13 @@ const getData = async () => {
 };
 
 getData();
+reviewsButton.addEventListener('click', () => {
+  setTimeout(() => {
+    getData();
+  }, 500);
+});
 
+// MAP
 const map = L.map('map').setView([50.0578399, 14.4316543], 15);
 
 L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
